@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Acompaño a emprendedores a construir una presencia digital que funcione — sin improvisar, con estrategia real." />
+  <meta property="og:title" content="JVMarketing360 | Estrategia Digital para Emprendedores" />
+  <meta property="og:description" content="Acompaño a emprendedores a construir una presencia digital que funcione — sin improvisar, con estrategia real." />
+  <meta property="og:url" content="https://jvmarketing.com.ar" />
+  <title>JVMarketing360 | Estrategia Digital para Emprendedores</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --verde: #AECE29;
+      --verde-bright: #D0F53F;
+      --negro: #000000;
+      --gris: #B3B3B3;
+      --gris-claro: #F2F2F2;
+      --blanco: #FFFFFF;
+      --font: 'Montserrat', system-ui, sans-serif;
+      --max: 1100px;
+      --gap: clamp(3rem, 6vw, 5rem);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--blanco);
+      color: var(--negro);
+      font-family: var(--font);
+      font-weight: 300;
+      line-height: 1.7;
+      font-size: clamp(14px, 1.8vw, 16px);
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--blanco);
+      border-bottom: 1px solid #E8E8E8;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+
+    .nav-logo-jv {
+      font-weight: 900;
+      font-size: 1.15rem;
+      color: var(--negro);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo-rest {
+      font-weight: 300;
+      font-size: 1.05rem;
+      color: var(--negro);
+      letter-spacing: 0.08em;
+      border-bottom: 3px solid var(--verde);
+      padding-bottom: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--negro);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--verde); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 88vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: var(--gap) 2rem;
+      gap: 4rem;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--negro);
+      background: var(--verde);
+      padding: 0.3rem 0.8rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--negro);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 .highlight {
+      background: var(--verde);
+      padding: 0 0.15em;
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: #444;
+      max-width: 460px;
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--negro);
+      color: var(--blanco);
+      text-decoration: none;
+      padding: 1rem 2.5rem;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover {
+      background: var(--verde);
+      color: var(--negro);
+      transform: translateY(-2px);
+    }
+
+    .hero-img {
+      position: relative;
+    }
+
+    .hero-img img {
+      width: 100%;
+      max-width: 460px;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 4/5;
+    }
+
+    .hero-img::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      right: -10px;
+      width: 60%;
+      height: 60%;
+      background: var(--verde);
+      z-index: -1;
+    }
+
+    /* ── SECCIONES GENÉRICAS ── */
+    section { padding: var(--gap) 2rem; }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--negro);
+      background: var(--verde);
+      padding: 0.25rem 0.7rem;
+      margin-bottom: 1.2rem;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--negro);
+      margin-bottom: 1.2rem;
+    }
+
+    /* ── HISTORIA ── */
+    .historia { background: var(--negro); }
+
+    .historia .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .historia .eyebrow { background: var(--verde); color: var(--negro); }
+    .historia h2 { color: var(--blanco); }
+
+    .historia p {
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 1.2rem;
+      line-height: 1.85;
+    }
+
+    .historia p strong {
+      color: var(--verde);
+      font-weight: 700;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .stat {
+      border-left: 3px solid var(--verde);
+      padding-left: 1rem;
+    }
+
+    .stat-num {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--verde);
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.4;
+      font-weight: 300;
+    }
+
+    /* ── SERVICIOS ── */
+    .servicios-intro {
+      max-width: 560px;
+      color: #555;
+      margin-bottom: 3rem;
+      font-weight: 300;
+    }
+
+    .servicios-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .servicio-card {
+      border: 1px solid #E8E8E8;
+      padding: 2.5rem;
+      transition: border-color 0.2s, transform 0.2s;
+      position: relative;
+    }
+
+    .servicio-card:hover {
+      border-color: var(--verde);
+      transform: translateY(-3px);
+    }
+
+    .servicio-card.featured {
+      border-color: var(--negro);
+      border-width: 2px;
+    }
+
+    .servicio-card.featured::before {
+      content: 'LANZAMIENTO JUNIO · 10 CUPOS';
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      background: var(--verde);
+      color: var(--negro);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 0.3rem 0.8rem;
+    }
+
+    .servicio-card h3 {
+      font-size: 1.4rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      margin-top: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .servicio-card p {
+      color: #555;
+      margin-bottom: 1.5rem;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    .servicio-includes {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .servicio-includes li {
+      font-size: 0.85rem;
+      color: var(--negro);
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #F0F0F0;
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      font-weight: 400;
+    }
+
+    .servicio-includes li::before {
+      content: '→';
+      color: var(--verde);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .btn-servicio {
+      display: inline-block;
+      color: var(--negro);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--verde);
+      padding-bottom: 2px;
+      transition: color 0.2s;
+    }
+
+    .btn-servicio:hover { color: var(--verde); }
+
+    /* ── TESTIMONIOS CARRUSEL ── */
+    .testimonios { background: var(--gris-claro); overflow: hidden; }
+
+    .testimonios-intro {
+      max-width: 560px;
+      color: #555;
+      margin-bottom: 3rem;
+      font-weight: 300;
+    }
+
+    .carrusel-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carrusel-track {
+      display: flex;
+      transition: transform 0.6s ease;
+    }
+
+    .testimonio {
+      min-width: 100%;
+      background: var(--blanco);
+      padding: 3rem;
+      border-top: 4px solid var(--verde);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .testimonio p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #333;
+      font-weight: 300;
+      font-style: italic;
+      max-width: 680px;
+    }
+
+    .testimonio-author {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--negro);
+    }
+
+    .carrusel-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .carrusel-btn {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--negro);
+      background: transparent;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, color 0.2s;
+      font-family: var(--font);
+    }
+
+    .carrusel-btn:hover {
+      background: var(--verde);
+      border-color: var(--verde);
+    }
+
+    .carrusel-dots {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--gris);
+      cursor: pointer;
+      transition: background 0.2s;
+      border: none;
+      padding: 0;
+    }
+
+    .dot.active { background: var(--negro); }
+
+    /* ── CONTACTO ── */
+    .contacto { background: var(--negro); }
+
+    .contacto .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contacto .eyebrow { background: var(--verde); color: var(--negro); }
+    .contacto h2 { color: var(--blanco); }
+
+    .contacto-sub {
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 2.5rem;
+      max-width: 400px;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .contacto-datos {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .contacto-dato {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: var(--blanco);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 300;
+      transition: color 0.2s;
+    }
+
+    .contacto-dato:hover { color: var(--verde); }
+
+    .dato-icon {
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--verde);
+      flex-shrink: 0;
+      letter-spacing: 0.05em;
+    }
+
+    .form-side form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-side input,
+    .form-side textarea {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: var(--blanco);
+      padding: 0.9rem 1rem;
+      font-family: var(--font);
+      font-size: 0.88rem;
+      font-weight: 300;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+
+    .form-side input::placeholder,
+    .form-side textarea::placeholder { color: rgba(255,255,255,0.35); }
+
+    .form-side input:focus,
+    .form-side textarea:focus { border-color: var(--verde); }
+
+    .form-side textarea { resize: vertical; min-height: 120px; }
+
+    .form-submit {
+      background: var(--verde);
+      color: var(--negro);
+      border: none;
+      padding: 1rem 2rem;
+      font-family: var(--font);
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      align-self: flex-start;
+    }
+
+    .form-submit:hover {
+      background: var(--verde-bright);
+      transform: translateY(-1px);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #111;
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+
+    .footer-logo .jv { font-weight: 900; color: var(--blanco); font-size: 0.95rem; }
+    .footer-logo .rest {
+      font-weight: 300;
+      color: var(--blanco);
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      border-bottom: 2px solid var(--verde);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .footer-social a {
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .footer-social a:hover { color: var(--verde); }
+
+    .footer-copy {
+      color: rgba(255,255,255,0.25);
+      font-size: 0.72rem;
+      font-weight: 300;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding-top: 2.5rem;
+      }
+
+      .hero-img { order: -1; }
+      .hero-img img { max-width: 100%; aspect-ratio: 3/2; }
+      .hero-img::after { display: none; }
+
+      .historia .container,
+      .contacto .container { grid-template-columns: 1fr; }
+
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .servicios-grid { grid-template-columns: 1fr; }
+
+      nav { padding: 1rem 1.2rem; }
+      .nav-links { gap: 1.2rem; }
+      .nav-links a { font-size: 0.72rem; }
+
+      footer { flex-direction: column; text-align: center; }
+
+      .testimonio { padding: 2rem 1.5rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <span class="nav-logo-jv">JV</span>
+      <span class="nav-logo-rest">MARKETING 360°</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#casos">Casos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-text">
+      <span class="hero-eyebrow">Estrategia digital para emprendedores</span>
+      <h1>Presencia digital que <span class="highlight">funciona.</span> Sin improvisar.</h1>
+      <p class="hero-sub">Acompaño a emprendedores a construir una presencia digital estratégica — sin fórmulas genéricas, con estrategia real.</p>
+      <a href="#contacto" class="btn-primary">Hablemos</a>
+    </div>
+    <div class="hero-img">
+      <!-- Reemplazá src con tu foto -->
+      <img src="https://static.wixstatic.com/media/d469d9_81fa6fbdaddd40a291119c02f3c0643b~mv2.jpeg/v1/crop/x_145,y_0,w_2565,h_3024/fill/w_550,h_650,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202025-10-28%20at%2011_43_06.jpeg" alt="Vanesa Ramírez — JVMarketing360" />
+    </div>
+  </header>
+
+  <!-- HISTORIA -->
+  <section class="historia">
+    <div class="container">
+      <div>
+        <span class="eyebrow">Quién soy</span>
+        <h2>No te vendo un sueño. Te acompaño en la realidad.</h2>
+        <p>Soy Vanesa Ramírez, Licenciada en Administración y Licenciada en Marketing con Maestría en Marketing Digital (UBA).</p>
+        <p>Construí JVMarketing360 para acompañar a emprendedores que quieren dejar de improvisar y empezar a tener una presencia digital que realmente funcione para su negocio.</p>
+        <p>No prometo viralizarte. Prometo que vas a entender qué estás haciendo, a quién le hablás y cómo medirlo.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat">
+          <span class="stat-num">10+</span>
+          <span class="stat-label">años acompañando emprendedores</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">0</span>
+          <span class="stat-label">fórmulas mágicas. Solo estrategia real.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <div class="container">
+      <span class="eyebrow">Lo que ofrezco</span>
+      <h2>Dos servicios. Un objetivo.</h2>
+      <p class="servicios-intro">Que tus redes dejen de ser una carga y empiecen a trabajar para tu negocio.</p>
+      <div class="servicios-grid">
+
+        <div class="servicio-card featured">
+          <h3>Análisis Bio</h3>
+          <p>Tu bio tiene 3 segundos para convencer. Si no está funcionando, no es tu contenido el problema — es tu primera impresión digital.</p>
+          <ul class="servicio-includes">
+            <li>Auditoría completa de tu perfil en Instagram</li>
+            <li>Reescritura de bio orientada a tu cliente ideal</li>
+            <li>Recomendaciones de foto de perfil y destacados</li>
+            <li>Entrega en 72hs con informe detallado</li>
+          </ul>
+          <a href="#contacto" class="btn-servicio">Quiero mi análisis →</a>
+        </div>
+
+        <div class="servicio-card">
+          <h3>Programa 360°</h3>
+          <p>Tres meses para ordenar tu estrategia digital, entender tus métricas y convertir tus redes en una herramienta real de negocio.</p>
+          <ul class="servicio-includes">
+            <li>1 reunión mensual por videollamada</li>
+            <li>Acompañamiento por WhatsApp entre sesiones</li>
+            <li>Estrategia de contenido personalizada</li>
+            <li>Análisis de métricas y ajustes en tiempo real</li>
+          </ul>
+          <a href="#contacto" class="btn-servicio">Consultá disponibilidad →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS CARRUSEL -->
+  <section id="casos" class="testimonios">
+    <div class="container">
+      <span class="eyebrow">Casos reales</span>
+      <h2>Lo que dicen quienes trabajaron conmigo</h2>
+      <p class="testimonios-intro">Emprendedores reales, resultados reales.</p>
+
+      <div class="carrusel-wrapper">
+        <div class="carrusel-track" id="carruselTrack">
+
+          <div class="testimonio">
+            <p>"Juntas trabajamos en los hábitos que son la base para crecer mi emprendimiento. Logré no solo más ventas y visualizaciones, sino poder formar una comunidad y sobre todo confianza en mí misma."</p>
+            <span class="testimonio-author">MV Encuadernación</span>
+          </div>
+
+          <div class="testimonio">
+            <p>"Trabajar de la mano de Vane fue un gran impulso para entender mejor hacia dónde llevar mi negocio físico. Me ayudó a encaminar el contenido de mi marca y sobre todo a definirlo. Recomiendo su manera asertiva, práctica y cercana."</p>
+            <span class="testimonio-author">Flamenco Escuela</span>
+          </div>
+
+          <div class="testimonio">
+            <p>"Con Vane conectamos de una manera que hizo que su estrategia funcionara super rápido y concreta."</p>
+            <span class="testimonio-author">Potenza Car Detail</span>
+          </div>
+
+          <div class="testimonio">
+            <p>"Vane logró que pueda volver a conectarme con mis objetivos, de manera estratégica y divertida a la vez."</p>
+            <span class="testimonio-author">Josefina Papeles</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="carrusel-controls">
+        <button class="carrusel-btn" id="btnPrev" aria-label="Anterior">←</button>
+        <button class="carrusel-btn" id="btnNext" aria-label="Siguiente">→</button>
+        <div class="carrusel-dots" id="carruselDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="contacto">
+    <div class="container">
+      <div>
+        <span class="eyebrow">Hablemos</span>
+        <h2>¿Querés que trabajemos juntos?</h2>
+        <p class="contacto-sub">Escribime y te cuento cómo puedo ayudarte. Sin propuestas genéricas.</p>
+        <div class="contacto-datos">
+          <a href="mailto:jvmarketing360@gmail.com" class="contacto-dato">
+            <span class="dato-icon">✉</span>
+            jvmarketing360@gmail.com
+          </a>
+          <a href="https://wa.me/5491163767163" class="contacto-dato" target="_blank" rel="noopener">
+            <span class="dato-icon">WA</span>
+            +54 11 6376-7163
+          </a>
+          <a href="https://www.instagram.com/jvmarketing360/" class="contacto-dato" target="_blank" rel="noopener">
+            <span class="dato-icon">IG</span>
+            @jvmarketing360
+          </a>
+        </div>
+      </div>
+      <div class="form-side">
+        <form action="https://formspree.io/f/jvmarketing360@gmail.com" method="POST">
+          <input type="text" name="nombre" placeholder="Tu nombre" required />
+          <input type="email" name="email" placeholder="Tu email" required />
+          <input type="text" name="negocio" placeholder="¿A qué se dedica tu negocio?" />
+          <textarea name="mensaje" placeholder="Contame en qué puedo ayudarte…" required></textarea>
+          <button type="submit" class="form-submit">Enviar mensaje</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="#" class="footer-logo">
+      <span class="jv">JV</span>
+      <span class="rest">MARKETING 360°</span>
+    </a>
+    <ul class="footer-social">
+      <li><a href="https://www.instagram.com/jvmarketing360/" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.tiktok.com/@wondervane1" target="_blank" rel="noopener">TikTok</a></li>
+      <li><a href="https://www.linkedin.com/in/vanesa-ramirez-88869b99/" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+    <span class="footer-copy">© 2026 JVMarketing360 · Vanesa Ramírez</span>
+  </footer>
+
+  <script>
+    // Carrusel
+    const track = document.getElementById('carruselTrack');
+    const dotsContainer = document.getElementById('carruselDots');
+    const slides = track.querySelectorAll('.testimonio');
+    let current = 0;
+    let timer;
+
+    // Crear dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Ir al testimonio ' + (i + 1));
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    function goTo(n) {
+      current = (n + slides.length) % slides.length;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dotsContainer.querySelectorAll('.dot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+      });
+      resetTimer();
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      timer = setInterval(() => goTo(current + 1), 5000);
+    }
+
+    document.getElementById('btnPrev').addEventListener('click', () => goTo(current - 1));
+    document.getElementById('btnNext').addEventListener('click', () => goTo(current + 1));
+
+    resetTimer();
+  </script>
+
+</body>
+</html>
