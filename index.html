@@ -273,7 +273,7 @@
 
     .servicios-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
     }
 
@@ -620,6 +620,7 @@
 
       .stats-grid { grid-template-columns: 1fr 1fr; }
       .servicios-grid { grid-template-columns: 1fr; }
+      .servicio-card { min-width: 100%; }
 
       nav { padding: 1rem 1.2rem; }
       .nav-links { gap: 1.2rem; }
@@ -691,7 +692,7 @@
   <section id="servicios">
     <div class="container">
       <span class="eyebrow">Lo que ofrezco</span>
-      <h2>Dos servicios. Un objetivo.</h2>
+      <h2>Tres servicios. Un objetivo.</h2>
       <p class="servicios-intro">Que tus redes dejen de ser una carga y empiecen a trabajar para tu negocio.</p>
       <div class="servicios-grid">
 
@@ -704,7 +705,7 @@
             <li>Recomendaciones de foto de perfil y destacados</li>
             <li>Entrega en 72hs con informe detallado</li>
           </ul>
-          <a href="#contacto" class="btn-servicio">Quiero mi análisis →</a>
+          <a href="#contacto" class="btn-servicio">Escribime por DM →</a>
         </div>
 
         <div class="servicio-card">
@@ -715,6 +716,18 @@
             <li>Acompañamiento por WhatsApp entre sesiones</li>
             <li>Estrategia de contenido personalizada</li>
             <li>Análisis de métricas y ajustes en tiempo real</li>
+          </ul>
+          <a href="#contacto" class="btn-servicio">Consultá disponibilidad →</a>
+        </div>
+
+        <div class="servicio-card">
+          <h3>Publicidad en redes</h3>
+          <p>Que tu negocio le aparezca a las personas correctas, en el momento correcto — sin depender del alcance orgánico.</p>
+          <ul class="servicio-includes">
+            <li>Configuración y gestión de campañas en Meta (Instagram y Facebook)</li>
+            <li>Definición de audiencias según tu cliente ideal</li>
+            <li>Creación de anuncios con imagen y texto</li>
+            <li>Monitoreo, optimización y reporte mensual</li>
           </ul>
           <a href="#contacto" class="btn-servicio">Consultá disponibilidad →</a>
         </div>
